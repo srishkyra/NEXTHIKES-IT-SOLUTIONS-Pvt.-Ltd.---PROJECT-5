@@ -1479,7 +1479,10 @@ if section == SECTIONS[10]:
         st.markdown("**Feature schema (latest)**")
         st.dataframe(pd.DataFrame({"Feature": list(lat["features"]), "Type": list(lat["features"].values())}), hide_index=True, width="stretch")
         if st.checkbox("Preview latest snapshot (first 10 customers)", key="fs_preview"):
-            st.dataframe(tfs.load_features(FS_DIR).head(10), width="stretch")
+            try:
+                st.dataframe(tfs.load_features(FS_DIR).head(10), width="stretch")
+            except FileNotFoundError as exc:
+                st.info(str(exc))
         st.code("from tellco.feature_store import load_features\nX = load_features('feature_store', columns=['Avg RTT (ms)', 'Satisfaction Score'])", language="python")
     else:
         st.info("The feature store is empty. Run `tellco-run --data <file>` to create the first snapshot.")

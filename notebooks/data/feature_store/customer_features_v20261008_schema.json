@@ -1,8 +1,8 @@
 {
   "path": "data/feature_store/customer_features_v20261008.parquet",
   "rows": 106856,
-  "created": "2026-10-08T13:55:17.222147",
-  "sha256_12": "d6e1cfdfbffe",
+  "created": "2026-10-08T15:48:55.028585",
+  "sha256_12": "f2f16006902a",
   "index": "MSISDN (string)",
   "columns": {
     "xDR Sessions": "int64",

@@ -24,3 +24,5 @@ __pycache__/
 *.parquet
 *.db
 notebooks/outputs/*.csv
+
+notebooks/outputs/models/*.joblib

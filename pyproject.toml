@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tellco-analytics"
+version = "1.0.0"
+description = "User overview, engagement, experience and satisfaction analytics for TellCo xDR data"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Srishti Sharma, NextHikes IT Solutions" }]
+dependencies = [
+  "numpy>=2.0", "pandas>=3.0", "scipy>=1.11", "scikit-learn>=1.3", "openpyxl>=3.1",
+  "pyarrow>=14", "joblib>=1.3", "shap>=0.44", "mlflow>=3.0",
+  "sqlalchemy>=2.0", "pymysql>=1.1",
+]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.50", "plotly>=5.18"]
+notebook = ["statsmodels>=0.14", "matplotlib>=3.8", "seaborn>=0.13", "missingno>=0.5"]
+
+[project.urls]
+Repository = "https://github.com/srishkyra/NEXTHIKES-IT-SOLUTIONS-Pvt.-Ltd.---PROJECT-5"
+
+[project.scripts]
+tellco-run = "tellco.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tellco*"]
+
+[tool.setuptools.package-data]
+tellco = ["data/*.csv"]

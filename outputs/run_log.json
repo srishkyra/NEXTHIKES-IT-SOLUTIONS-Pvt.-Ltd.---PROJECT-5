@@ -1,0 +1,64 @@
+{
+  "run_id": "satisfaction_model_20261008_152407",
+  "code_version": "no-git|data:7e8fdc88fadb",
+  "pipeline_version": "1.2.0",
+  "start_time": "2026-10-08T15:24:07",
+  "end_time": "2026-10-08T15:24:41",
+  "duration_seconds": 33.5,
+  "source": {
+    "data_fingerprint": "39def91948f8",
+    "n_customers": 106856,
+    "features": [
+      "xDR Sessions",
+      "Total Duration (s)",
+      "Total Data Volume (Bytes)",
+      "Avg TCP Retransmission (Bytes)",
+      "Avg RTT (ms)",
+      "Avg Throughput (kbps)"
+    ],
+    "target": "Satisfaction Score = mean(engagement score, experience score)"
+  },
+  "model": "Gradient Boosting",
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 3,
+    "random_state": 42
+  },
+  "split": "80/20, random_state=42",
+  "metrics": {
+    "MAE": 0.008181,
+    "RMSE": 0.01185,
+    "R2": 0.992139,
+    "final_train_loss": 6.762e-05,
+    "final_test_loss": 7.022e-05,
+    "iterations_to_within_1pct_of_final_test_loss": 198
+  },
+  "reference_stats": {
+    "xDR Sessions": {
+      "mean": 1.28352174889571,
+      "std": 0.5347012563000878
+    },
+    "Total Duration (s)": {
+      "mean": 114380.33864013603,
+      "std": 67704.7743870831
+    },
+    "Total Data Volume (Bytes)": {
+      "mean": 617662793.1104743,
+      "std": 335798906.4444823
+    },
+    "Avg TCP Retransmission (Bytes)": {
+      "mean": 14823293.964044092,
+      "std": 9004241.286947131
+    },
+    "Avg RTT (ms)": {
+      "mean": 39.1480655122624,
+      "std": 22.486488354616235
+    },
+    "Avg Throughput (kbps)": {
+      "mean": 3703.3363522785407,
+      "std": 5840.87193930104
+    }
+  },
+  "best_by_test_r2": "Gradient Boosting",
+  "model_path": "outputs/models/satisfaction_model_20261008_152407.joblib"
+}

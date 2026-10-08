@@ -1,0 +1,26 @@
+# Raw data and caches (contain MSISDN customer identifiers)
+data/*.xlsx
+*.xlsx
+*.cache.pkl
+
+# Customer-level outputs
+feature_store/*.parquet
+outputs/*.csv
+!outputs/model_comparison.csv
+!outputs/loss_curve.csv
+outputs/mysql_export.json
+outputs/mlflow.db
+outputs/mlartifacts/
+mlruns/
+
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# Anywhere in the project, including notebooks/
+*.parquet
+*.db
+notebooks/outputs/*.csv

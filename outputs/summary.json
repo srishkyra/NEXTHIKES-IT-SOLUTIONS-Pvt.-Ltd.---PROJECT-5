@@ -1,0 +1,7 @@
+{
+  "customers": 106856,
+  "sessions": 148935,
+  "feature_store_version": "20261008_152407",
+  "mlflow_run_id": "8f04a29ed68c4f34b2c7c2de5c1c47cf",
+  "test_r2": 0.992139
+}
